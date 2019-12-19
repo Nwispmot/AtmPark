@@ -21,7 +21,7 @@
         <c:forEach var="arm" items="${all}">
             <tr>
                 <td>${arm.id}</td>
-                <td>${arm.account}</td>
+                <td>${arm.balance}</td>
                 <td>${arm.isAvailable}</td>
                 <td><a href="${arm.id}">info</a></td>
             </tr>

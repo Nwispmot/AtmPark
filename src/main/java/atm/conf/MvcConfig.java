@@ -1,6 +1,9 @@
 package atm.conf;
 
+import atm.dao.AtmDao;
+import atm.entity.Randomiser;
 import org.apache.tomcat.jdbc.pool.DataSource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -11,6 +14,9 @@ import org.springframework.web.servlet.view.JstlView;
 @Configuration
 @EnableWebMvc
 public class MvcConfig {
+    @Autowired
+    AtmDao dao;
+
     @Bean
     public InternalResourceViewResolver viewResolver(){
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
@@ -33,8 +39,14 @@ public class MvcConfig {
         dataSource.setUrl("jdbc:mysql://localhost:3306/atm");
         dataSource.setUsername("root");
         dataSource.setPassword("Sql1234.");
-        //dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         return dataSource;
+    }
+
+
+    @Bean
+    public Randomiser randomise(){
+        return new Randomiser();
     }
 
 }

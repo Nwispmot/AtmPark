@@ -21,4 +21,8 @@ public class AtmService {
     public List<Atm> getAtms() {
         return dao.getAtms();
     }
+
+    public void updateBalance() {
+         dao.updateBalance();
+    }
 }

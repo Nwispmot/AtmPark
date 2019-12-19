@@ -1,17 +1,18 @@
 package atm.entity;
 
-import java.sql.Time;
+
+import java.sql.Timestamp;
 
 public class Info{
     public int id;
     public int balance;
-    public Time time;
+    public Timestamp time;
 
 
     public Info() {
     }
 
-    public Info(int id, int balance, Time time) {
+    public Info(int id, int balance, Timestamp time) {
         this.id = id;
         this.balance = balance;
         this.time = time;
@@ -33,11 +34,11 @@ public class Info{
         this.balance = balance;
     }
 
-    public Time getTime() {
+    public Timestamp getTime() {
         return time;
     }
 
-    public void setTime(Time time) {
+    public void setTime(Timestamp time) {
         this.time = time;
     }
 }
